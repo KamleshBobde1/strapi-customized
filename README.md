@@ -8,7 +8,7 @@ strapi.admin = require('@strapi/admin/strapi-server');
 
 replace the above code(line 6) with below line(example):
 
-strapi.admin = require('/home/kamleshbobde/Desktop/strapi-admin-users-permissions-plugin-customized/src/admin/strapi-server');
+strapi.admin = require('../../../../../../src/admin/strapi-server');
 
 [here we have given path upto ~/strapi-admin-users-permissions-plugin-customized/src/admin/strapi-server.js]
 
