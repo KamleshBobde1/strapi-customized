@@ -12,11 +12,6 @@ const jwt = require('jsonwebtoken');
 //PBCS-16
 const Keycloak = require("keycloak-verify").default;
 require("regenerator-runtime");
-//PBCS-16
-const kcConfigObj = {
-  realm: 'entando',
-  authServerUrl: 'http://192.168.43.3.nip.io'
-}
 
 module.exports = ({ strapi }) => ({
   // getToken(ctx) {
@@ -92,7 +87,7 @@ module.exports = ({ strapi }) => ({
   //new method to decode kc token (end user request) ----- PBCS-16
   async verifyKcToken(token) {
     let kcSuccessResponse = null;
-    const config = { realm: kcConfigObj.realm, authServerUrl: kcConfigObj.authServerUrl };
+    const config = { realm: 'entando', authServerUrl: 'http://192.168.43.3.nip.io' };
         const keycloak = Keycloak(config);
         await keycloak.verifyOnline(token)
         .then(user => {
